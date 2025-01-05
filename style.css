@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Jaldi:wght@400;700&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+
+:root {
+    --emotion-happy: #FFD700;
+    --emotion-sad: #1E90FF;
+    --emotion-angry: #FF4500;
+    --emotion-anxious: #8A2BE2;
+    --emotion-excited: #FF69B4;
+    --emotion-relaxed: #3CB371;
+    --emotion-bored: #A9A9A9;
+    --emotion-tired: #708090;
+    --emotion-confident: #FFD700;
+    --emotion-stressed: #FF6347;
+    --font-fira-mono: 'Fira Mono', monospace;
+    --font-jaldi: 'Jaldi', sans-serif;
+    --font-playfair: 'Playfair', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-jaldi);
+    background-color: #f5f5f5;
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.year {
+    font-size: 5rem;
+    font-weight: 700;
+    font-family: var(--font-playfair);
+}
+
+table {
+    margin-block: 20px 50px;
+}
+
+.header {
+    background-color: #ddd;
+    gap: 10px;
+}
+
+.header td {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+}
+
+td {
+    padding: 10px;
+}
+
+.days td {
+    text-align: center;
+    opacity: 0.5;
+    font-family: var(--font-fira-mono);
+    cursor: pointer;
+}
+
+.not-set {
+    background-color: #808080;
+}
+
+.not-a-day {
+    background-color: #ddd;
+}
+
+.today {
+    color: red;
+    opacity: 1;
+    border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+.happy {
+    background-color: var(--emotion-happy);
+}
+
+.sad {
+    background-color: var(--emotion-sad);
+}
+
+.angry {
+    background-color: var(--emotion-angry);
+}
+
+.anxious {
+    background-color: var(--emotion-anxious);
+}
+
+.excited {
+    background-color: var(--emotion-excited);
+}
+
+.relaxed {
+    background-color: var(--emotion-relaxed);
+}
+
+.bored {
+    background-color: var(--emotion-bored);
+}
+
+.tired {
+    background-color: var(--emotion-tired);
+}
+
+.confident {
+    background-color: var(--emotion-confident);
+}
+
+.stressed {
+    background-color: var(--emotion-stressed);
+}
+
+.day-set {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    padding-top: 40px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 0.5px solid;
+    align-items: center;
+}
+
+.fa-close {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.day-set h2 {
+    font-size: 2rem;
+    font-family: var(--font-jaldi);
+    margin-bottom: 20px;
+}
+
+.box {
+    width: 25px;
+    height: 25px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.keywords {
+    display: grid;
+    grid-template-columns: repeat(5, 2fr);
+    gap: 10px;
+    list-style: none;
+}
+
+.keywords li {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    text-transform: capitalize;
+}
+
+@media (max-width: 600px) {
+    .header {
+        font-size: 0.4rem;
+        padding: 3px;
+    }
+
+    .days td {
+        padding: 3px;
+    }
+
+    .day-set {
+        width: 90%;
+    }
+
+    .keywords {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
